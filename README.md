@@ -5,9 +5,6 @@
 This is a personal project used to learn how to manipulate React & Node.
 The choice of technologies was React / Node.js and MariaDB for the database.
 
-It was designed with Catmanga and Mangadex in mind; the first for the works' display, the 
-second for the reader.
-
 # Installation
 To install all the libraries, please use the following doc in order, 
 - [server_setup](./doc/server/server_setup.md)
