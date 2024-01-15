@@ -1,0 +1,98 @@
+Magazine: id_magazine, name_magazine
+Explore: id_explore, manga_fk
+Year: id_year, value
+:
+:
+:
+:
+:
+
+Paru dans, 11 Manga, 1N Magazine
+Est mis en avant, 11 Manga, 1N Explore
+parut_en, 11 Manga, 1N Year
+Est marqué par, 1N Manga, 11 AssocMT
+AssocMT: id_amt, manga_fk, tag_fk
+Marque, 1N Tag, 11 AssocMT
+Tag: id_tag, name
+:
+
+Chapter: id_chapter, name_chapter, number_chapter, url, state, date_mel
+Contient, 0N Manga, 11 Chapter
+Manga: id_manga, name_manga, alt_name, summary, note, state
+Est géré par, 1N Manga, 11 AssocMTe
+AssocMTe: id_amte, manga_fk, team_fk
+Gère, 1N Team, 11 AssocMTe
+:
+:
+
+:
+Est dans l'état, 11 Manga, 1N Status
+Ecrit par, 1N Manga, 11 AssocMA
+Est typé, 11 Manga, 1N Type
+:
+Team: id_team, name_team
+:
+:
+
+:
+Status: id_status, name_satuts
+AssocMA: id_ama, manga_fk, author_fk
+Type: id_type, name_type
+:
+:
+:
+:
+
+:
+Author: id_author, name_author, surname_author
+Ecrit, 1N Author, 11 AssocMA
+:
+:
+:
+:
+:
+
+:
+:
+:
+:
+:
+:
+:
+:
+
+:
+:
+:
+:
+:
+:
+:
+:
+
+:
+:
+:
+:
+:
+:
+:
+:
+
+:
+:
+:
+:
+:
+:
+Staff: id_staff, name_staff, password_staff
+:
+
+:
+:
+:
+:
+:
+:
+Role: id_role, name_role
+Est, 1N Staff, 11 Role

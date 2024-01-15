@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+body {
+    background: var(--color-BS4);
+}
+.off{
+    display: none;
+}
+.text {
+    color: var(--color-BS1);
+}
+
+.generalInformation {
+    background-color: var(--color-BS5);
+    padding-left: 15%;
+    padding-right: 5%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.mangaInformation {
+    padding-right: 0px;
+    display: flex;
+}
+.imageAndFirst{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.mangaInformation img {
+    width: 300px;
+    border-radius: 10px;
+    margin-right: 40px;
+    display: inline-block;
+    height: auto;
+}
+#firstChapter{
+    transform: translateY(20px);
+    color: var(--color-100);
+    background-color: var(--color-BS4);
+    outline: 1px solid var(--color-BS2);
+
+}
+.titleInformation {
+    display: inline-block;
+}
+
+
+.titleDiv {
+    font-weight: bold;
+    font-size: 50px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.score {
+    user-select: none;
+    position: relative;
+    left: 2%;
+}
+
+.score p {
+    padding-top: 4px;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.score img {
+    margin-right: 0px;
+    color: white;
+    display: flex;
+    width: 20px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+
+.nbr {
+    position: absolute;
+    background-color: var(--color-BS3);
+    border-radius: 5px;
+    left: -6.7%;
+    width: 150px;
+}
+
+.nbr li {
+    display: none;
+    font-size: 13px;
+    padding: 8px 28px 8px 28px;
+    color: var(--color-BS1);
+    align-items: center;
+    cursor: pointer;
+}
+
+.nbr li:first-child {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nbr li:hover {
+    color: white;
+    background-color: var(--color-BS4);
+}
+
+#top:hover {
+    border-radius: 5px 5px 0px 0px;
+}
+
+#bottom:hover {
+    border-radius: 0px 0px 5px 5px;
+}
+
+#title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#mangaSummary {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    font-weight: medium;
+}
+
+.authorInformation {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: medium;
+}
+
+.authorInformation a {
+    text-decoration: none;
+    transition: all 0.3s;
+    color: var(--color-500);
+    font-weight: medium;
+    margin-right: 30px;
+}
+
+.authorInformation a:hover {
+    color: var(--color-BS2);
+}
+
+.metadata {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: medium;
+}
+
+.metadata a {
+    text-decoration: none;
+    transition: all 0.3s;
+    color: var(--color-500);
+    font-weight: medium;
+    margin-right: 30px;
+}
+
+.metadata a:hover {
+    color: var(--color-BS2);
+}
+
+.tags {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: medium;
+}
+
+.infoTitle {
+    margin-bottom: 6px;
+}
+
+.tags a {
+    text-decoration: none;
+    transition: all 0.3s;
+    color: var(--color-500);
+    font-weight: medium;
+    margin-right: 20px;
+}
+
+.tags a:hover {
+    color: var(--color-BS2);
+}
+
+.titleInformation button {
+    border: none;
+    margin-right: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    padding: 5px 15px 5px 15px;
+    color: var(--color-BS1);
+    background-color: var(--color-BS3);
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.titleInformation button:hover{
+    background-color: var(--color-BS4);
+  }
+
+.titleInformation h3 {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.titleInformation p {
+    font-size: 17px;
+    font-weight: lighter;
+    line-height: 130%;
+}
+.tagNote {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 1090px) {
+
+    .text {
+        color: var(--color-BS1);
+    }
+
+    .generalInformation {
+        background-color: var(--color-BS5);
+        /*padding-left: 15%;
+        padding-right: 5%;
+        padding-top: 50px;
+        padding-bottom: 50px;*/
+        padding: 3em 3em 2em 3em;
+    }
+
+    .mangaInformation {
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mangaInformation img {
+        width: 200px;
+        margin-right: 0px;
+    }
+    #firstChapter{
+        margin-right: 0px;
+        font-size: 15px;
+        padding: 13px 17px 13px 17px;
+        margin-bottom: 2rem;
+    }
+    #firstChapter:first-line{
+        font-size: 15px;
+
+    }
+
+    .titleInformation {
+        display: inline-block;
+    }
+
+
+    .titleDiv {
+        font-weight: bold;
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .score {
+        background-color: #256d85;
+        margin-left: 15px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        vertical-align: top;
+        transition: all 0.3s;
+        user-select: none;
+        position: relative;
+    }
+
+    .score p {
+        padding-top: 4px;
+        font-size: 17px;
+        margin-left: 10px;
+    }
+
+    .score img {
+        margin-right: 0px;
+        color: white;
+        display: flex;
+        width: 20px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+    }
+
+    .nbr {
+        position: relative;
+        background-color: var(--color-BS3);
+        height: 52px;
+        width: 120px;
+    }
+
+    .nbr li {
+        display: none;
+        font-size: 13px;
+        padding: 8px 0px 8px 10px;
+        /*  margin: 0px 0px 0px 3px;*/
+        color: var(--color-BS1);
+        background-color: var(--color-BS3);
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .nbr li:first-child {
+        pointer-events: none;
+        display: flex;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        justify-content: center;
+    }
+
+    .nbr li:hover {
+        color: white;
+        background-color: var(--color-BS4);
+    }
+
+    #top:hover {
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    #bottom:hover {
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    #title {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    #mangaSummary {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        font-weight: medium;
+    }
+
+    .authorInformation {
+        margin-top: 8px;
+        margin-bottom: 2px;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: medium;
+    }
+
+    .authorInformation a {
+        text-decoration: none;
+        transition: all 0.3s;
+        color: var(--color-500);
+        font-weight: medium;
+        margin-right: 30px;
+    }
+
+    .authorInformation a:hover {
+        color: var(--color-BS2);
+    }
+
+    .metadata {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: medium;
+    }
+
+    .metadata a {
+        text-decoration: none;
+        transition: all 0.3s;
+        color: var(--color-500);
+        font-weight: medium;
+        margin-right: 30px;
+    }
+
+    .metadata a:hover {
+        color: var(--color-BS2);
+    }
+
+    .tags {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: medium;
+    }
+
+    .infoTitle {
+        margin-bottom: 6px;
+    }
+
+    .tags a {
+        text-decoration: none;
+        transition: all 0.3s;
+        color: var(--color-500);
+        font-weight: medium;
+        margin-right: 20px;
+    }
+
+    .tags a:hover {
+        color: var(--color-BS2);
+    }
+
+    .titleInformation button {
+        border: none;
+        margin-right: 5px;
+        font-size: 15px;
+        border-radius: 3px;
+        padding: 5px 15px 5px 15px;
+        color: var(--color-BS1);
+        background-color: var(--color-BS3);
+        transition: all 0.3s;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .titleInformation button:hover {
+        background-color: var(--color-BS4);
+    }
+
+    .titleInformation h3 {
+        display: inline-block;
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    .titleInformation p {
+        font-size: 17px;
+        font-weight: lighter;
+        line-height: 130%;
+    }
+
+    .tagNote {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

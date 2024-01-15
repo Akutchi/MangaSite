@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+.container-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-template-rows: 1fr 1fr;
+    gap: 0em 4em;
+    grid-auto-flow: row;
+    width: 100%;
+    padding: 2em 9em 0em 8em;
+  }
+
+#chapitres {
+    background-color: #989898;
+}
+
+.rectangle11 {
+    background: linear-gradient(180deg, var(--color-BS5) -90%, var(--color-BS4) 50%, var(--color-BS5) 200%);
+    padding-left: 15%;
+    padding-right: 10%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.titre-chapitres {
+    font-size: 30px;
+    font-weight: normal;
+    padding-top: 10px;
+}
+
+.rectangle12 {
+    padding-right: 0px;
+    margin-top : 20px;
+    display: flex;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-rows: 1fr 1fr;
+}
+.latest {
+    color: var(--color-BS1);
+    font-weight: 800;
+    padding-top: 40px;
+    position: relative;
+    font-size: 1.7em;
+    padding-left: 4.7em;
+  }
+  
+  .serie-name {
+    font-weight: 800;
+    font-size: 1.55em;
+  }
+  
+  .chapter-number {
+    display: flex;
+    gap: 10px;
+    font-size: 1.2em;
+  }
+  
+  .chapter-number p {
+    cursor: default;
+    font-size: 1em;
+    color: var(--color-BS2);
+  }
+  .chapter-number h4 {
+    color: var(--color-BS1);
+  }
+  
+  h4 {
+    font-weight: 600;
+  }
+.button {
+    border: none;
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 20px 25px 20px 25px;
+    color: var(white);
+    background-color: var(--color-BS5);
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-overflow: ellipsis;
+    border: 1px solid var(--color-500);
+}
+
+.button p {
+    font-size: 17px;
+    color: var(--color-BS1);
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+.button:first-line{
+    font-size: 20px;
+    font-weight: 800!important;
+}
+
+.button:hover{
+    background-color: var(--color-BS25);
+    color: #000;
+  }
+
+.button:hover p {
+    color: #1a1a1a;
+}  
+@media screen and (max-width: 1090px){
+
+ 
+  .container-preview {
+    padding: 2em 4em 3em 4em;
+
+  }
+  .container-preview a {
+    color: var(--color-000);
+  }
+
+  .latest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+  }
+}

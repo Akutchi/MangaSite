@@ -1,0 +1,18 @@
+#lecteur {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+
+.imgContainer {
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+.hidden{
+    display: none;
+}
+.visible{
+    display: unset;
+}
