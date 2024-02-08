@@ -3,7 +3,7 @@
 # Overview
 
 This is a personal project used to learn how to manipulate React & Node.
-The choice of technologies was React / Node.js and MariaDB for the database.
+The choice of technologie for the database was MariaDB.
 
 # Installation
 To install all the libraries, please use the following doc in order, 
