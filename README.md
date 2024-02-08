@@ -4,6 +4,7 @@
 
 This is a personal project used to learn how to manipulate React & Node.
 The choice of technologie for the database was MariaDB.
+This project was done in tandem with a friend of mine. While he worked on the front-end, I worked mainly on the back-end; although I also touched the front-end (the Router System, the base for the "Reader" part, and all the logic for API calls). 
 
 # Installation
 To install all the libraries, please use the following doc in order, 
