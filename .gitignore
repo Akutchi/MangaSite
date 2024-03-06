@@ -1,2 +1,5 @@
 ./server/sql/data/
 ./server/sql/__pycache__
+./server/profiles
+./server/node_modules
+./front/node_modules

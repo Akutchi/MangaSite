@@ -4,12 +4,30 @@
 
 This is a personal project used to learn how to manipulate React & Node.
 The choice of technologie for the database was MariaDB.
-This project was done with a friend of mine. While he worked on the front-end, I worked mainly on the back-end; although I also touched the front-end (the Router System, the base for the "Reader" part, and all the logic for API calls). 
+This project was done with a friend of mine. While he worked on the front-end, I worked mainly on the back-end; although I also touched the front-end (the Router System, the base for the "Reader" part, and all the logic for API calls).
 
 This project consist in the creation of a website for Manga viewing and was inspired by [Catmanga](https://web.archive.org/web/20210430012045/http://catmanga.org/)
 
+Visuals :
+
+| ![Home](./doc/Visuals/Visual1.png) |
+|:--:|
+| *Home Page* |
+
+| ![AllSeries](./doc/Visuals/Visual3.png) |
+|:--:|
+| *List of all Series* |
+
+| ![One Page](./doc/Visuals/Visual4.png) |
+|:--:|
+| *One Manga Information* |
+
+| ![Reader](./doc/Visuals/Visual2.png) |
+|:--:|
+| *Reader. You can navigate by clicking on the left/right of the image. Test Image Credit : https://brookmiles.ca/* |
+
 # Installation
-To install all the libraries, please use the following doc in order, 
+To install all the libraries, please use the following doc in order,
 - [server_setup](./doc/server/server_setup.md)
 - [front_setup](./doc/front/front_setup.md)
 

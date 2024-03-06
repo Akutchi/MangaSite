@@ -28,7 +28,8 @@ STATE_CODES = {
         "teapot":               `EasterEgg 418-${SHA["all"]} I'm%20a%20teapot`,
         "continue":             `Information 102-${SHA["all"]} Processing`,
 		"good":					`Success 201-${SHA["all"]} Created`,
-		"broken":				`Broken 500-${SHA["all"]} Internal%20Server20Error`
+		"broken":				`Broken 500-${SHA["all"]} Internal%20Server20Error`,
+		"unimplemented":		`NotImplemented 501-${SHA["all"]} Could%20Not%20Comply`
     },
 
 	user:  {
@@ -56,7 +57,7 @@ CHECK_TYPE = {
 async function check_type_base(route, options) {
 
     options.forEach(param => {
-    
+
         if (CHECK_TYPE.isParamTeapot(param)) return Promise.reject(STATE_CODES.all.teapot);
 
         param = parseInt(param);
@@ -76,7 +77,7 @@ async function check_type_base(route, options) {
  * @returns {Promise} 	A http-like status-code
  */
 async function check_type_manga(db, sql, route, options) {
-    
+
     let param = options.param;
 
     const max_nb = (await sql.query(db, sql.builder.view.view_size("MANGA")))[0].number;

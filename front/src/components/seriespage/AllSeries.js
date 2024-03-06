@@ -13,10 +13,10 @@ function formatAllChapters(seriesObj) {
   let series = [];
 
   for (let i = 0; i < seriesObj.length; i++) {
-      
-    const serieInfo = { 
+
+    const serieInfo = {
                         id: seriesObj[i].MANID,
-                        name: seriesObj[i].MANNA, 
+                        name: seriesObj[i].MANNA,
                         image: seriesObj[i].frontpage,
                         encoding: seriesObj[i].encoding
                       };
@@ -31,17 +31,17 @@ function createChapterPreview(serie, index) {
 
   return (
 
-    <div className='row' key={index}> 
-      
+    <div className='row' key={index}>
+
       {<Link to={"/series/id="+serie.id}>
         <img src={'data:image/jpg;'+serie.encoding+','+serie.image} alt={serie.name} />
         <p className='serie-name-text'>{serie.name}</p>
       </Link>}
-  
+
       <div className='chapter-number'>
       </div>
     </div>
-  
+
   );
 }
 
@@ -59,7 +59,7 @@ function exit(timeoutId) {
 
 
         const elem_list = [
-                          document.querySelector('.wrapper'), 
+                          document.querySelector('.wrapper'),
                           document.querySelector('.select_wrap'),
                           document.querySelector('.select_ul'),
                           document.querySelector('.select_ul Li')
@@ -131,7 +131,7 @@ function AllSeries() {
   const navigate = useNavigate();
 
   const getLatest = async() => {
-      
+
     await axios.get(baseURL+ALPHABET_SORT)
     .then(response => {return response.data})
     .then(response => {setPost(formatAllChapters(response))})
@@ -147,11 +147,12 @@ function AllSeries() {
 
   if (!post) {return null};
 
+  // this onClick={exit(timeoutId)} was on wrapper. Deleted now works
   return (
     <div id="suite">
         <div className="head">
           <h2 className="latest">Nos séries</h2>
-            <div className="wrapper" onClick={exit(timeoutId)}>
+            <div className="wrapper">
               <div className="select_wrap">
 
                 <ul className="default_option" onClick={handleClick}>
@@ -186,7 +187,7 @@ function AllSeries() {
               </div>
             </div>
           </div>
-          
+
           <div className="container-preview">
 
           {post.map((serie, index) => {return createChapterPreview(serie, index, setId)})}
@@ -208,7 +209,7 @@ function AllSeries() {
                 align-items: center;
               }
           }
-        
+
       `}</style>
 
     </div>

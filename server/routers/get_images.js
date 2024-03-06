@@ -50,6 +50,8 @@ async function getChapterData(info, manid, chaid) {
 
     db = sql.new_connection("viewer");
 
+    const response = undefined;
+
     const state_parameters = await check_parameters(db, manid, chaid);
     if (state_parameters != errors.STATES.all.good) {return Promise.reject(state_parameters)};
 
@@ -68,8 +70,16 @@ async function getChapterData(info, manid, chaid) {
     "contentType": false,
     "data": form
     };
-    console.log(settings)
-    const response = await axios(settings);
+    //const response = await axios(settings); // because no access to igmur anymore
+
+    // Test data. Comes from https://brookmiles.ca/
+    const AllLinks = [
+        {link: "https://brookmiles.ca/2022/01/manga-page-1-final.png"},
+        {link: "https://brookmiles.ca/2022/02/manga-page-2-final.png"},
+        {link: "https://brookmiles.ca/2022/04/manga-page-3-rough.png"}
+    ];
+
+    if (response == undefined) return {data: AllLinks};
 
     if (response["data"].status == 500 || response["data"]["data"]["error"]) return Promise.reject(errors.STATES["all"]["broken"]);
     return await response["data"];
@@ -88,7 +98,7 @@ get_images.get("/", (req, res) => {
             res.send(ImagesLink);
         }
     ).catch((e)=>{res.json(errors.state_managment(ROUTER_NAME, e))})
-    
+
     })()
 });
 

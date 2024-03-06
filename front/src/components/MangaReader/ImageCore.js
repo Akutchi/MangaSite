@@ -17,17 +17,7 @@ function previousImage(setIndex, index) {
       div.childNodes.item(index).style.display = "none";
       div.childNodes.item(index-1).style.display = "unset";
       setIndex(index-1);
-
-      /*let currentURL = window.location.href;
-      let newNumber = 1;
-      if (currentURL.match(/\/\d+$/)) {
-        let match = currentURL.match(/\/(\d+)$/);
-        let currentNumber = parseInt(match[1], 10);
-        newNumber = currentNumber - 1;
-      }
-      let newURL = currentURL.replace(/\/\d*$/, '') + '/' + newNumber;
-      window.history.pushState({}, '', newURL);*/
-       }
+    }
 }
 
 function nextImage(setIndex, index, Images) {
@@ -38,17 +28,6 @@ function nextImage(setIndex, index, Images) {
     div.childNodes.item(index).style.display = "none";
     div.childNodes.item(index+1).style.display = "unset";
     setIndex(index+1);
-    /*let currentURL = window.location.href;
-    let newNumber = 1;
-    if (currentURL.match(/\/\d+$/)) {
-      let match = currentURL.match(/\/(\d+)$/);
-      let currentNumber = parseInt(match[1], 10);
-      console.log(currentNumber)
-      currentNumber = 0 ? 1 : currentNumber;
-      newNumber = currentNumber + 1;
-    }
-    let newURL = currentURL.replace(/\/\d*$/, '') + '/' + newNumber;
-    window.history.pushState({}, '', newURL);*/
   }
 }
 
@@ -153,4 +132,3 @@ export default function ImageCore() {
       </div>
   );
 }
-			
