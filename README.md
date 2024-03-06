@@ -10,19 +10,19 @@ This project consist in the creation of a website for Manga viewing and was insp
 
 Visuals :
 
-| ![Home](./doc/Visuals/Visual1.png) |
+| ![Home](./doc/Visuals/VisualHome.png) |
 |:--:|
 | *Home Page* |
 
-| ![AllSeries](./doc/Visuals/Visual3.png) |
+| ![AllSeries](./doc/Visuals/VisualSeries.png) |
 |:--:|
 | *List of all Series* |
 
-| ![One Page](./doc/Visuals/Visual4.png) |
+| ![One Page](./doc/Visuals/VisualPage.png) |
 |:--:|
 | *One Manga Information* |
 
-| ![Reader](./doc/Visuals/Visual2.png) |
+| ![Reader](./doc/Visuals/VisualReader.png) |
 |:--:|
 | *Reader. You can navigate by clicking on the left/right of the image. Test Image Credit : https://brookmiles.ca/* |
 
