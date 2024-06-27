@@ -1,4 +1,4 @@
-# Manga Website
+# MangaSite
 
 # Overview
 
