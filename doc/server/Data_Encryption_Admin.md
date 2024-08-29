@@ -16,4 +16,4 @@ The sequence diagram of the algorithm is as follows :
 # Implementation
 
 To see the implementation, please see the [Server side](../../server/routers/check_user.js) \
-The Client side is in another repository with the admin front.
+The Client side is in [another repository](https://github.com/Akutchi/MangaSite_Admin) with the admin front.
