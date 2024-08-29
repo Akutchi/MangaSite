@@ -9,7 +9,7 @@ import { getURL, EXPLORE } from '../utils/url';
 
 import "../../CSS/slideShow.css";
 import "flickity/css/flickity.css";
- 
+
 // choose so that the js lib run after all is rendered
 const TIMEOUT = 1;
 
@@ -71,7 +71,7 @@ function stackSlideShowPanels(setIsVisible, flickityRef) {
 
 
 function createPanel(id, manga, index) {
-  
+
   let tags = Object.values(manga.tags).slice(0, -1);
 
   return (
@@ -83,7 +83,7 @@ function createPanel(id, manga, index) {
         <div className="tag">
           {tags.map(tag => <p className="text">{tag}</p>)}
         </div>
-        
+
         <div className="summary">
           <p className="summaryContent">{manga.summary}</p>
         </div>
@@ -97,10 +97,6 @@ function createPanel(id, manga, index) {
         </div>
 
       </div>
-      <img className="slideImage"
-        src="https://cdn.discordapp.com/attachments/628638005393096745/1112078389440958494/0ssss1_2.png"
-        alt="preview" />
-
     </div>
     );
 }
@@ -114,7 +110,7 @@ function SlideShow () {
   const navigate = useNavigate();
 
   const getExplore = async() => {
-      
+
     await axios.get(baseURL+EXPLORE)
     .then(response => {return response.data})
     .then(response => {setPost(response)})
@@ -127,9 +123,9 @@ function SlideShow () {
   }, []);
 
   if (!post) {return null};
-  
+
   return (
-    
+
      <div className="carousel">
 
       {post.map((manga, index) => (

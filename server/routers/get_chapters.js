@@ -30,7 +30,7 @@ get_chapters.get("/hash-daee7686db5c0f8f0317", (req, res) => {
 
     (async() => {res.json(await getChaptersData(req.query.id))})()
     .catch((e)=>{res.json(errors.state_managment(ROUTER_NAME, e))})
-    
+
     return res;
 });
 

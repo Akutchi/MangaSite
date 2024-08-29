@@ -19,7 +19,7 @@ function notAtTheEnd(index, mangaObject) {
  * Get the data from the database in order to create the slideshow.
  * A recursive function was used because the way sql works with
  * node is that several queries results in a nested structure.
- *  
+ *
  * @param   {sql} sql an object with every prebuild query in it.
  * @param   {mangaObject} mangaObject the route to be checked
  * @param   {index} index the parameters to be checked
@@ -66,12 +66,12 @@ async function construct_explore_JSON(sql, mangaObject, index) {
         name:       mangaObject[index].MANNA,
         tags:       tags_JSON,
         summary:    mangaObject[index].MANSU,
-        latest:     sql.builder.helper.format_chapter(latestChapter[0]),
+        latest:     sql.builder.helper.format_chapter(latestChapter[0].CHANU),
         status:     mangaObject[index].STANA,
     }
 
     complete_manga_JSON.push(partial_manga_JSON_i);
-    
+
     return complete_manga_JSON;
 }
 
@@ -125,7 +125,7 @@ async function get_latest() {
 
         Array.prototype.push.call(latest_JSON, {
                                                 id: element.MANID,
-                                                name: element.MANNA, 
+                                                name: element.MANNA,
                                                 number: sql.builder.helper.format_chapter(element.CHANU),
                                                 frontpage: encode.base64(encode.path_to_images+element.MANID+encode.extension),
                                                 date: element.CHADA
@@ -193,7 +193,7 @@ async function get_manga_info(manid) {
                                                 surname: element.AUTSU
                                                 })
     });
- 
+
     manga_JSON = {
         manga_info: {
             name:       manga.MANNA,
@@ -203,9 +203,9 @@ async function get_manga_info(manid) {
             status:     manga.STANA,
             alt_name:   manga.MANAL,
             type:       manga.TYPNA,
-            magazine:   manga.MAGNA,    
-        },    
-        
+            magazine:   manga.MAGNA,
+        },
+
         tags:       tags_JSON,
         authors:    authors_JSON,
         chapters:   chapter_JSON,
@@ -231,7 +231,7 @@ get_manga_router.get("/explore", (req, res) => {
     return res;
 });
 
-get_manga_router.get("/latest", (req, res) => { 
+get_manga_router.get("/latest", (req, res) => {
 
     (async () => {res.json(await get_latest());})()
     .catch((e)=>errors.state_managment(ROUTER_NAME, e))

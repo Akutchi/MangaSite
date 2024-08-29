@@ -27,11 +27,15 @@ Visuals :
 | *Reader. You can navigate by clicking on the left/right of the image. Test Image Credit : https://brookmiles.ca/* |
 
 # Installation
+To have a smooth installation, please clone the repository in ~/Desktop [1].
+
 To install all the libraries, please use the following doc in order,
 - [server_setup](./doc/server/server_setup.md)
 - [front_setup](./doc/front/front_setup.md)
 
 If you want to know more about the website in details, please check the [API](./doc/API/Internal_API_Documentation.md), the [Encryption scheme](./doc/server/Data_Encryption_Admin.md) or the [Database](<./doc/bdd/Mangas.svg>)
+
+[1] I only accounted for Linux users.
 
 # To Be Done
 

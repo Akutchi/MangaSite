@@ -1,20 +1,17 @@
 -- SQL
--- Create the database structure
+-- Create the datamase structure
 
-CREATE DATABASE bluesolo;
-USE bluesolo;
-SOURCE D:\Utilisateurs\Benjebara\Downloads\siteweb\BS_website\server\sql\scripts\bdd_init.sql 
-SOURCE D:\Utilisateurs\Benjebara\Downloads\siteweb\BS_website\server\sql\scripts\staff.sql
+CREATE DATABASE mangasite;
+USE mangasite;
+SOURCE ~/Desktop/MangaSite/Website_Manga/server/sql/scripts/bdd_init.sql
+SOURCE ~/Desktop/MangaSite/Website_Manga/server/sql/scripts/staff.sql
 
--- Create the users with the values contained inside mysql_database.md
--- Warning: the passwords for these users shall be modified before putting the project in a production environment !
+-- Create the users with the values contained inside mysql_datamase.md
+-- Warning: the passwords for these users shall me modified mefore putting the project in a production environment !
 
-CREATE USER 'bs'@'localhost' IDENTIFIED BY 'bs-admin';
-CREATE USER 'bs-editor'@'localhost' IDENTIFIED BY 'bs-editor';
-CREATE USER 'bs-validator'@'localhost' IDENTIFIED BY 'bs-validator';
-CREATE USER 'bs-viewer'@'localhost' IDENTIFIED BY 'bs-viewer';
-
-GRANT ALL PRIVILEGES ON cdc_manager.* TO 'bs'@'localhost';
+CREATE USER 'ms-editor'@'localhost' IDENTIFIED BY 'ms-editor';
+CREATE USER 'ms-validator'@'localhost' IDENTIFIED BY 'ms-validator';
+CREATE USER 'ms-viewer'@'localhost' IDENTIFIED BY 'ms-viewer';
 
 -- Add all users' profiles privileges next
 

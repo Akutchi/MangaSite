@@ -23,17 +23,17 @@ function database_promise_query(database, query) {
 
 /**
  * Returns a new connection with the said profile.
- * @param {String} profile 
+ * @param {String} profile
  */
 function db_connection(profile){
 
 	user_credentials = profile_reader(profile);
-		
+
 	return new mysql.createConnection({
 		host: "localhost",
 		user: user_credentials.username,
 		password: user_credentials.password,
-		database: "bluesolo"
+		database: "mangasite"
 	});
 }
 
@@ -77,7 +77,7 @@ function build_view_state_chapter(manid, chaid) {
 
 
 function build_view_explore() {
-	return `SELECT man.MANID, man.MANNA, man.MANSU, sta.STANA, e.EXPID FROM MANGA AS man  
+	return `SELECT man.MANID, man.MANNA, man.MANSU, sta.STANA, e.EXPID FROM MANGA AS man
 	JOIN STATUS_MANGA AS sta ON sta.STAID = man.STAFK
 	JOIN EXPLORE AS e ON e.MANFK = man.MANID;`
 }
@@ -86,8 +86,8 @@ function build_view_authors(manid) {
 
 	return `SELECT aut.AUTNA, aut.AUTSU FROM AUTHORS AS aut
 	JOIN WRITTEN_BY AS wri ON wri.AUTID = aut.AUTID
-	JOIN MANGA AS m ON m.MANID = wri.MANID 
-	WHERE m.MANID="${manid}";` 
+	JOIN MANGA AS m ON m.MANID = wri.MANID
+	WHERE m.MANID="${manid}";`
 
 }
 
@@ -95,7 +95,7 @@ function build_view_tags(manid) {
 
 	return `SELECT tag.TAGNA FROM TAG AS tag
 	JOIN MARQUED_BY AS mar ON mar.TAGID = tag.TAGID
-	JOIN MANGA AS m ON m.MANID = mar.MANID 
+	JOIN MANGA AS m ON m.MANID = mar.MANID
 	WHERE m.MANID=${manid};`
 
 }
@@ -111,7 +111,7 @@ function build_view_latest_chapter(manid) {
 
 function build_view_latest_list() {
 
-	return `SELECT c.CHANU, c.CHADA, m.MANID, m.MANNA FROM MANGA AS m 
+	return `SELECT c.CHANU, c.CHADA, m.MANID, m.MANNA FROM MANGA AS m
 	JOIN CHAPTERS AS c ON m.MANID = c.MANFK
 	ORDER BY (c.CHADA) DESC;`
 
@@ -131,14 +131,14 @@ function build_view_manga(manid) {
 function build_view_chapter_manga(manid, chaid) {
 
 	const isChapterFetchFromLatest = (chaid) => {return chaid == 0}
-	
+
 	if (isChapterFetchFromLatest(chaid)) {
 		return `SELECT c.CHANA, c.CHANU, c.CHAUR FROM CHAPTERS AS c
 		JOIN MANGA AS m ON c.MANFK = m.MANID
 		WHERE m.MANID=${manid}
 		ORDER BY (c.CHADA) DESC`
 	}
-	
+
 	// fetched from reader
 	return `SELECT c.CHANA, c.CHANU, c.CHAUR FROM CHAPTERS AS c
 	JOIN MANGA AS m ON c.MANFK = m.MANID
@@ -172,16 +172,16 @@ function build_view_sort(type) {
 	}
 
 	const additional_fields = (type) => {
-		if (type == "team") 
+		if (type == "team")
 			return `, t.TEANA`
 		else if (type == "note")
 			return `, m.MANNO`
-		
+
 		return ``
 	}
 
 	const join_smt = (type) => {
-		if (type == "team") 
+		if (type == "team")
 			return `JOIN HANDLED_BY AS h ON h.MANID = m.MANID JOIN TEAM as t ON t.TEAID = h.TEAID `
 		return ``
 	}
@@ -214,7 +214,7 @@ function build_chapter_number(obj) {
 		return "Oneshot"
 	else if (obj == '?')
 		return ""
-	
+
 	return `Chapitre ${obj}`
 }
 
@@ -263,8 +263,8 @@ module.exports = {
 		modify: {
 			explore_table: modify_explore_table,
 		}
-		
+
 	},
-	qreturn: query_return	
+	qreturn: query_return
 };
 

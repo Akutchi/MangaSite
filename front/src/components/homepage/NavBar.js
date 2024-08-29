@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link, useNavigate }    from 'react-router-dom';
 import { useState, useEffect }  from 'react';
-import { OnMainLogoClick, 
+import { OnMainLogoClick,
          OnMouseEnterNavBar,
          OnMouseLeaveNavBar }   from '../utils/navBarUtils'
 import { isOnMobile }           from '../utils/windowUtils'
@@ -219,6 +219,7 @@ export default function NavBar(props) {
         <div className="logo" onClick={() => OnMainLogoClick(isMobile)}
                               onMouseEnter={() => OnMouseEnterNavBar(light, isMobile)}
                               onMouseLeave={() => OnMouseLeaveNavBar(light, isMobile)}>
+        <img src={book}/>
 
         </div>
 

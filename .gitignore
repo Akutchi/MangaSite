@@ -1,4 +1,4 @@
-./server/sql/data/
+./server/keys/*
 ./server/sql/__pycache__
 ./server/profiles
 ./server/node_modules

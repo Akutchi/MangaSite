@@ -11,7 +11,8 @@ const formatChapterNumber = (chapter) => {
 }
 
 function createChapter(manga_id, chapter) {
-    let realName = chapter.name.split(" ")[1];
+    const Chapter_Start = 7;
+    let realName = chapter.name.substr(Chapter_Start+1, chapter.name.length-Chapter_Start);
     return(
         <Link to={"/mangaReader/manga="+manga_id+"&chapter="+formatChapterNumber(chapter.number.split(" ")[1])}>
         <div className="button">

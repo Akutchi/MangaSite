@@ -20,7 +20,7 @@ const randomHex = (bytes = 8) => {
     const randomString = crypto.randomBytes(8).toString("hex");
     return randomString;
   }
-  
+
 
 async function get_user_pwd(user_login) {
 
@@ -61,7 +61,7 @@ function isTimestampValid(timestamp) {
 
 function loginCheckConditions(login, pwd, timestamp, hash, bdd_pwd) {
 
-    return isLoginValid(login, pwd) && 
+    return isLoginValid(login, pwd) &&
            isHashValid(hash, bdd_pwd) &&
            isTimestampValid(timestamp);
 }
@@ -91,7 +91,7 @@ check_user.get("/getPublic", (req, res) => {
     })()
     .catch((e) => {console.log(e); res.json(false)})
     return res;
-    
+
 });
 
 check_user.get("/getTime", (req, res) => {
@@ -106,7 +106,7 @@ check_user.get("/request_auth", (req, res) => {
     const PrivateKey = fs.readFileSync("./keys/PvK.txt", {encoding: "utf-8"});
 
     const key = new nodeRSA(PrivateKey);
-    key.setOptions({encryptionScheme: 'pkcs1'});
+    key.setOptions ({encryptionScheme: "pkcs1"});
     const raw_message = sanitize({data: key.decrypt(crypted_message, 'utf8')});
 
     (async() => {
@@ -125,7 +125,7 @@ check_user.get("/request_auth", (req, res) => {
     })()
     .catch((e) => {console.log(e); res.json(false)})
     return res;
-    
+
 });
 
 check_user.get("/redirect", (req, res) => {
@@ -142,14 +142,14 @@ check_user.get("/redirect", (req, res) => {
                 login_status = true;
                 console.log(`${req.headers.origin} was already logged, redirect`);
                 return true;
-            } 
+            }
         });
-       
+
         res.json({redirect_response: login_status});
     })()
     .catch((e) => {console.log(e); res.json(false)})
     return res;
-    
+
 });
 
 check_user.get("/logout", (req, res) => {
@@ -162,7 +162,7 @@ check_user.get("/logout", (req, res) => {
     })()
     .catch((e) => {console.log(e); res.json(false)})
     return res;
-    
+
 });
 
 module.exports = check_user;

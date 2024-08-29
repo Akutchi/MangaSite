@@ -5,8 +5,6 @@ import { useState, useEffect } from 'react';
 import { stylePageTheme } from '../utils/lightUtils'
 import { isOnMobile }           from '../utils/windowUtils'
 import "../../CSS/footer.css"
-import discordIcon from '../../SVG/discord.svg';
-import twitterIcon from '../../SVG/twitter.svg';
 
 function Credit(props) {
 
@@ -49,7 +47,7 @@ function Credit(props) {
         <div className="toggleWrapper">
 
             <input type="checkbox" className="dn" id="dn" onClick={() => {  setLight(!light); stylePageTheme(root, light, props.addOn);}} />
-            
+
             <label htmlFor="dn" className="toggle">
               <span className="toggle__handler">
                 <span className="crater crater--1"></span>
@@ -59,15 +57,9 @@ function Credit(props) {
 
           </div>
         </div>
-        
+
         <div className="plus">
           <p>About</p>
-          <a href="" target="_blank" rel="noreferrer">
-            <img src={discordIcon} alt="discord" className="discord" />
-          </a>
-          <a href="" target="_blank" rel="noreferrer">
-            <img src={twitterIcon} alt="twitter" className="twitter" />
-          </a>
         </div>
 
         <style jsx="true">{`
@@ -83,7 +75,7 @@ function Credit(props) {
           }
           .credit p{
             font-size: 17px;
-            
+
           }
           .credit.bas {
             position: absolute;
@@ -108,7 +100,7 @@ function Credit(props) {
              cursor: pointer;
            }
         `}</style>
-      
+
     </div>
   );
 }

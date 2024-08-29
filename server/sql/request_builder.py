@@ -1,6 +1,6 @@
 
 class request_builder:
-     
+
     def __init__(self, table) -> None:
 
         self.string_builder = "INSERT INTO "+table.upper()+" ("
@@ -13,7 +13,7 @@ class request_builder:
 
     def get_insert_end(self, table, column_number):
 
-        try: 
+        try:
             end = self.insert_end[table]
 
         except:

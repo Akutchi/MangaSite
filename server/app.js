@@ -25,6 +25,7 @@ const admin			=	require('./routers/admin');
 
 function generateAndWriteKeys() {
 	const key = new NodeRSA();
+
 	key.generateKeyPair(4096, 17);
 	const PuK = key.exportKey('public');
 	const PvK = key.exportKey('private');
@@ -48,7 +49,7 @@ if(PROD){
 		origin: '*',
 		methods: ["GET", "POST"],
 		credentials: true /*Access-Control-Allow-Credentials*/
-	}))  
+	}))
 
 } else {
 
@@ -56,7 +57,7 @@ if(PROD){
 		origin: `*`,
 		methods: ["GET", "POST"],
 		credentials: true /*Access-Control-Allow-Credentials*/
-	})) 
+	}))
 }
 
 app.use(session({
@@ -92,10 +93,10 @@ if (PROD) {
 	}, app).listen(port, function(){
 	console.log("Express server listening on port " + port);
 	});
-	
+
 } else {
 	app.listen(port, ()=>{
-		setTimeout(() => {console.log("on localhost:"+port)}, 500);	
+		setTimeout(() => {console.log("on localhost:"+port)}, 500);
 	})
 }
 
