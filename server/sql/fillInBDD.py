@@ -15,7 +15,7 @@ def getTables():
 
         _, tail = os.path.split(file)
         fileName = re.match(r"tables - ([a-zA-z]+).csv", tail).group(1)
-        tables[fileName] = {"original_col":[], "BDD_col":[], "data":[]}
+        tables[fileName] = {"raw_columns":[], "BDD_columns":[], "data":[]}
 
 
 def getFields():
@@ -24,19 +24,26 @@ def getFields():
 
         data_table = pd.read_csv(BASE_PATH+BASE_NAME+table+".csv")
         tables[table]["data"] = data_table
-        tables[table]["original_col"] = data_table.columns.values
-        tables[table]["BDD_col"].append(table.upper()[0:3]+"ID")
-        
-        for field in data_table.columns.values:
-            
-            field_sep = field.split(" ")
+        tables[table]["raw_columns"] = data_table.columns.values
 
-            if len(field_sep) == 2:
-                tables[table]["BDD_col"].append(field_sep[0].upper()[0:3]+field_sep[1].upper()[0:2])
-            elif len(field_sep) == 1 and table == "Manga":
-                tables[table]["BDD_col"].append(table.upper()[0:3]+field.upper()[0:2])
+        # there's always an ID, for example, MANID (for Manga ID)
+        tables[table]["BDD_columns"].append(table.upper()[0:3]+"ID")
+        
+        for field in tables[table]["raw_columns"]:
+            
+            field_components = field.split(" ")
+
+            # format BDD names like in ./sql/scripts/create_bdd.sql
+            # e.g CHANU for Chapter Number
+            if len(field_components) == 2:
+                tables[table]["BDD_columns"].append(field_components[0].upper()[0:3]+field_components[1].upper()[0:2])
+
+            # For "Summary" to become MANSU
+            elif len(field_components) == 1 and table == "Manga":
+                tables[table]["BDD_columns"].append(table.upper()[0:3]+field.upper()[0:2])
+                
             else:
-                tables[table]["BDD_col"].append(table.upper()[0:3]+"NA")
+                tables[table]["BDD_columns"].append(table.upper()[0:3]+"NA")
 
 
 def fill_in(conn, table):
@@ -44,7 +51,7 @@ def fill_in(conn, table):
     for i in range(0, tables[table]["data"].shape[0]):     
         formatted_data = BDD_utils.format_data(tables[table], i)
         formatted_data = BDD_utils.check_type(table, formatted_data)
-        BDD_utils.insert_into(conn, table, tables[table]["BDD_col"], formatted_data)
+        BDD_utils.insert_into(conn, table, tables[table]["BDD_columns"], formatted_data)
 
 
 def fill_in_association(conn, tables):
