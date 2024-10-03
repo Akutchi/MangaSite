@@ -1,7 +1,7 @@
 import mariadb
 import request_builder as rqb
 
-def verify_if_only_one(manga_data, col_name, index):
+def Split_Field_If_Possible(manga_data, col_name, index):
 
     split_fk = (manga_data.iloc[index][col_name]).split(" ")
 
@@ -73,8 +73,8 @@ def insert_assoc_manga(conn, tables):
 
     for i in range(0, manga_data.shape[0]):
 
-        split_tag = verify_if_only_one(manga_data, "tags fk", i)
-        split_team = verify_if_only_one(manga_data, "team fk", i)
+        split_tag = Split_Field_If_Possible(manga_data, "tags fk", i)
+        split_team = Split_Field_If_Possible(manga_data, "team fk", i)
 
         for field_value in split_tag:
 
