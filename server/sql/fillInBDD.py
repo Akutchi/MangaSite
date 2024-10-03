@@ -33,7 +33,7 @@ def getFields():
             
             field_components = field.split(" ")
 
-            # format BDD names like in ./sql/scripts/create_bdd.sql
+            # format BDD names like in ./sql/scripts/bdd_init.sql
             # e.g CHANU for Chapter Number
             if len(field_components) == 2:
                 tables[table]["BDD_columns"].append(field_components[0].upper()[0:3]+field_components[1].upper()[0:2])
